@@ -62,7 +62,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTOMappings\SmartMap.csproj">
+    <ProjectReference Include="..\SmartMap\SmartMap.csproj">
       <Project>{e43d20c7-44b3-40df-a59d-0070cd7b4b94}</Project>
       <Name>SmartMap</Name>
     </ProjectReference>
