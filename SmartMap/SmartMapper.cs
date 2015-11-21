@@ -4,12 +4,6 @@ using System.Linq;
 
 namespace andy250.Sandbox.SmartMap
 {
-    public interface ISmartMapper<in TSrc, out TDest>
-    {
-        IEnumerable<TDest> Map(IEnumerable<TSrc> dataToMap);
-        TDest Map(TSrc item);
-    }
-
     public class SmartMapper<TSrc, TDest> : ISmartMapper<TSrc, TDest>
     {
         private readonly IMapperResolver resolver;
@@ -19,7 +13,7 @@ namespace andy250.Sandbox.SmartMap
             this.resolver = resolver;
         }
 
-        public IEnumerable<TDest> Map(IEnumerable<TSrc> dataToMap)
+        public List<TDest> Map(IEnumerable<TSrc> dataToMap)
         {
             if (dataToMap != null && dataToMap.Any())
             {

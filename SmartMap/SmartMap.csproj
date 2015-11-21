@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMapper.cs" />
+    <Compile Include="ISmartMapper.cs" />
     <Compile Include="SmartMapper.cs" />
     <Compile Include="IMapperResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

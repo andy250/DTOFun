@@ -1,4 +1,4 @@
-﻿namespace andy250.Sandbox.TestApp.MapApp
+﻿namespace andy250.Sandbox.SmartMap.Test.Entities
 {
     public class BinderModel
     {

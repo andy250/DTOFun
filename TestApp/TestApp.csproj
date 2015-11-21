@@ -47,25 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapApp\BinderModel.cs" />
-    <Compile Include="MapApp\DTO.cs" />
-    <Compile Include="MapApp\ModelbinderMapper.cs" />
-    <Compile Include="MapApp\Model.cs" />
     <Compile Include="MapApp\App.cs" />
-    <Compile Include="MapApp\NinjectMapperResolver.cs" />
-    <Compile Include="MapApp\TheMappers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SmartMap\SmartMap.csproj">
-      <Project>{e43d20c7-44b3-40df-a59d-0070cd7b4b94}</Project>
-      <Name>SmartMap</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
