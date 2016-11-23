@@ -1,0 +1,25 @@
+{
+    "version": "1.0.0-*",
+    "compilationOptions": {
+        "emitEntryPoint": true
+    },
+
+    "dependencies": {
+        "NETStandard.Library": "1.0.0-rc2-23819",
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-16448",
+        "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-16119"
+    },
+
+    "commands": {
+        "dockerwebapp2": "dockerwebapp2",
+        "web": "dockerwebapp2"
+    },
+
+    "frameworks": {
+        "dnxcore50": { 
+            "dependencies": {
+                "StackExchange.Redis.StrongName": "1.1.553-alpha"
+            }
+        }
+    }
+}
