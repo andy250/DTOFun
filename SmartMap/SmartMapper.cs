@@ -15,20 +15,20 @@ namespace andy250.Sandbox.SmartMap
 
         public List<TDest> Map(IEnumerable<TSrc> dataToMap)
         {
-            if (dataToMap != null && dataToMap.Any())
+            if (dataToMap == null)
             {
-                return dataToMap.Select(Map).ToList();
+                throw new ArgumentNullException("Nothing to map...");
             }
-            return new List<TDest>();
+            return dataToMap.Select(Map).ToList();
         }
 
         public TDest Map(TSrc item)
         {
-            if (item != null)
+            if (item == null)
             {
-                return GetMapper(item).Map((dynamic) item);
+                throw new ArgumentNullException("Nothing to map...");
             }
-            return default(TDest);
+            return GetMapper(item).Map((dynamic) item);
         }
 
         private dynamic GetMapper(TSrc item)

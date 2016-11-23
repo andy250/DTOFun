@@ -32,6 +32,12 @@ namespace andy250.Sandbox.SmartMap.Test
             var models = mapper.Map(bms);
 
             Assert.Equal(bms.Count, models.Count);
+
+            Assert.Equal(bms[0].Id, models[0].Id);
+            Assert.Equal(bms[1].Id, models[1].Id);
+
+            Assert.Equal(typeof(ModelUser), models[0].GetType());
+            Assert.Equal(typeof(ModelProduct), models[1].GetType());
         }
     }
 }

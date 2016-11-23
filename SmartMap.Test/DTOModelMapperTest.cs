@@ -25,10 +25,23 @@ namespace andy250.Sandbox.SmartMap.Test
         }
 
         [Fact]
-        public void MapNullEntity_ShouldReturnNull()
+        public void MapNullEntity_ShouldThrow_ArgumentNullException()
         {
-            var result = mapper.Map((DTO)null);
-            Assert.Null(result);
+            Assert.Throws<ArgumentNullException>(() => { mapper.Map((DTO)null); });
+        }
+
+        [Fact]
+        public void MapNullEntityList_ShouldThrow_ArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() => { mapper.Map((List<DTO>) null); });
+        }
+
+        [Fact]
+        public void MapEmptyEntityList_ShouldReturnEmptyModelList()
+        {
+            var result = mapper.Map(new List<DTO>());
+            Assert.NotNull(result);
+            Assert.Equal(0, result.Count);
         }
 
         [Fact]
@@ -43,6 +56,14 @@ namespace andy250.Sandbox.SmartMap.Test
             var models = mapper.Map(dtos);
 
             Assert.Equal(dtos.Count, models.Count);
+
+            Assert.Equal(dtos[0].Id, models[0].Id);
+            Assert.Equal(dtos[1].Id, models[1].Id);
+            Assert.Equal(dtos[2].Id, models[2].Id);
+
+            Assert.Equal(typeof(ModelProduct), models[0].GetType());
+            Assert.Equal(typeof(ModelProduct), models[1].GetType());
+            Assert.Equal(typeof(ModelUser), models[2].GetType());
         }
     }
 }
